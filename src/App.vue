@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+        color="white"
+        app>
+      <v-row
+        justify="center">
+        <router-link class="nav-links" to="/">Home</router-link>
+        <router-link class="nav-links" to="/shop">SHOP</router-link>
+        <router-link class="nav-links" to="/about">About</router-link>
+      </v-row>
+    </v-app-bar>
+
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+
+    <v-footer
+      color="black"
+      padless
+      app>
+      <v-row
+          justify="center"
+          no-gutters
+      >
+        <div
+          color="white">
+          test
+        </div>
+      </v-row>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .nav-links {
+    margin: 20px
+  }
 </style>
